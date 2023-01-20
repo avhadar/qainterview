@@ -1,0 +1,72 @@
+Epic: ASTRO-EPIC
+As an astrophotographer, I would like to know how a filter would affect my astro pictures so that I find the best filter.
+
+Story: ASTRO-0001
+As an astronomer, I would like a CLI - Astro Filter Test Tool (AFTT) - to load and store processed file data.
+
+    Acceptance Criterias:
+        - AFTT should allow to load an image and save it back.
+        - An Input parameter (-i) defines the input image location & name.
+        - An Output parameter (-o) defines the output image location & name.
+
+Story: ASTRO-0002
+As an astrophotographer, I would like to convert from RGB space color to light wavelength color space.
+
+    Acceptance Criterias:
+        - AFTT should contain a conversion function from hue to light wavelength.
+        - AFTT should contain a reverse conversion function from light wavelength to hue.
+
+
+    Pre-requisites:
+        - ASTRO-0001 Story is done.
+
+Story: ASTRO-0003
+As an astrophotographer, I would like to specify any filter response via a CSV file based on light wavelength.
+
+    Acceptance Criterias:
+        - A filter can be loaded based on CSV file.
+        - The CSV file defines the filter response as wavelength_in, wavelength_out in nanometer.
+        - The filter can be defined for all possible wavelength.
+
+    Pre-requisites:
+        - ASTRO-0001 Story is done.
+        - ASTRO-0002 Story is done.
+
+Story: ASTRO-0004
+As an astrophotographer, I would like to apply a filter to an astroimage.
+
+    Acceptance Criterias:
+        - A filter can be loaded based on CSV file.
+        - The CSV file defines the response intensity factor of the original light as intensity_out.
+        - The filter is applied to the whole image and saved.
+
+    Pre-requisites:
+        - ASTRO-0001 Story is done.
+        - ASTRO-0002 Story is done.
+        - ASTRO-0003 Story is done.
+
+Story: ASTRO-0005
+As an astrophotographer, I would like to apply chained filters to an astroimage.
+
+    Acceptance Criterias:
+        - Several filter can be loaded and applied in the proper order.
+        - The filters are applied to the whole image and saved.
+
+    Pre-requisites:
+        - ASTRO-0001 Story is done.
+        - ASTRO-0002 Story is done.
+        - ASTRO-0003 Story is done.
+        - ASTRO-0004 Story is done.
+
+Story: ASTRO-0006
+As an astrophotographer, I would like AFTT to be as fast as possible.
+
+    Acceptance Criterias:
+        - The CLI should produce the same results within the shortest timespan.
+
+    Pre-requisites:
+        - ASTRO-0001 Story is done.
+        - ASTRO-0002 Story is done.
+        - ASTRO-0003 Story is done.
+        - ASTRO-0004 Story is done.
+        - ASTRO-0005 Story is done.
